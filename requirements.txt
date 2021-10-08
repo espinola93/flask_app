@@ -3,7 +3,6 @@ certifi==2021.5.30
 click==7.1.2
 Flask==1.1.1
 Werkzeug==0.16.1
-itsfdangerous==1.1.0
 Jinja2==2.11.2
 MarkupSafe==2.0.1
 setuptools==0.7.3
