@@ -9,9 +9,9 @@
 {% block content %}
 
 
-    <!-- Custom styles for this template -->
+    <!-- Custom styles for this template 
     <link href="pricing.css" rel="stylesheet">
-
+ -->
   <body>
  
 <!--carousel-->
@@ -31,7 +31,7 @@
           <div class="carousel-caption ">
 			  <h1  class="fs-1">Residential and Commercial Remodeling</h1>
             <p>Some representative placeholder content for the first slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">FREE ESTIMATE</a></p>
+            <p><a class="btn btn-lg btn-primary" href="#contact us">FREE ESTIMATE</a></p>
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@
           <div class="carousel-caption">
             <h1  class="fs-1">Interior Remodeling</h1>
             <p>Some representative placeholder content for the second slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="tel:+123 123456789" >CALL:(512)621-3438</a></p>
+            <p><a class="btn btn-lg btn-primary" href="tel:(512)621-3438" >CALL:(512)621-3438</a></p>
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@
           <div class="carousel-caption ">
 			  <h1  class="fs-1">Exterior Remodeling</h1>
             <p>Some representative placeholder content for the third slide of this carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">EMAIL</a></p>
+            <p><a class="btn btn-lg btn-primary" href="#contact us">EMAIL</a></p>
           </div>
         </div>
       </div>
@@ -76,7 +76,7 @@
 
     
 <!--services-->
-  <section class="py-5 text-center container">
+  <section class="py-5 text-center container" id="services">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1  class="fs-1" style="color:black;">OUR SERVICES</h1>
@@ -87,7 +87,7 @@
         </p>
       </div>
     </div>
-  </section>
+
 
   <div class="album py-5 bg-light">
     <div class="container">
@@ -171,10 +171,10 @@
       </div>
     </div>
   </div>
-
+</section>
 <!--services end-->
 <!--why choose us-->
-<section class="py-5 text-center container">
+<section class="py-5 text-center container" id="why choose us">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1  class="fs-1" style="color:black;">WHY CHOOSE US</h1>
@@ -201,22 +201,58 @@
     </div><!-- /.row -->
 	
 <!--contact us-->
-<section>
+
+
+  <h1 style="color:black;" class="fs-1">CONTACT US</h1>
+    <p  style="color:black;" >Enter your information below and we will contact you as soon as we can.</p>
+<br/>
+<form method="POST">
+  <div class="row">
+  <div class="col">
+	{{form.hidden_tag()}}
+	{{form.name.label}}
+	{{form.name(class="form-control")}}
+    
+    </div>
+     <div class="col">
+  {{form.hidden_tag()}}
+	{{form.email.label}}
+  {{form.email(class="form-control" )}}
+      </div>
+</div>
+    <div class="mb-3">
+  {{form.hidden_tag(name)}}
+	{{form.message.label}}
+  {{form.message(class="form-control" )}}
+      </div>
+<div>
+	<br/>
+	{{form.submit(class="btn btn-lg btn-primary")}}
+  <div>
+  <br/>
+  <p><a class="btn btn-lg btn-secondary" href="#">CALL:(512)621-3438</a></p>
+</div>
+  </div>
+</form>
+
+<!--
+<section id="contact us">
+<form action="/contact_form_processor" method="POST">
 <div>
   <h1 style="color:black;" class="fs-1">CONTACT US</h1>
 	<p  style="color:black;" >Enter your information below and we will contact you as soon as we can.</p>
 </div>
 <div class="row">
   <div class="col">
-    <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+    <input type="text" class="form-control" placeholder="name" aria-label="name" name="Name">
   </div>
   <div class="col">
-    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+    <input type="text" class="form-control" placeholder="email" aria-label="Email">
   </div>
 </div>
 <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label" >Example textarea</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message"></textarea>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message" name="Message"></textarea>
 </div>
 <div>
   <p><a class="btn btn-lg btn-primary" href="#">SUBMIT</a></p>
@@ -224,7 +260,8 @@
 <div>
   <p><a class="btn btn-lg btn-secondary" href="#">CALL:(512)621-3438</a></p>
 </div>
-</section>	  
+  </form>
+</section>	   
 <!--contact us-->
 	 
 
